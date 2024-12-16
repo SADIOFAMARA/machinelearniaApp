@@ -52,13 +52,38 @@ def home_page():
     st.title("Prédiction de la performance des étudiants")
     st.image("https://cdn.pixabay.com/photo/2017/09/26/04/28/classroom-2787754_1280.jpg", caption="Pixabay",  use_container_width=True)
     st.write("""
-        Cette application permet de :
-        - Explorer vos données à travers des visualisations interactives.
-        - Réaliser des modèles de prédiction en utilisant différents algorithmes de machine learning.
+        **Contexte**
         
+        Dans un environnement éducatif de plus en plus axé sur les données, il est essentiel pour les établissements scolaires de comprendre les 
+        facteurs qui influencent la performance académique des étudiants.
+
+        Les performances académiques des étudiants peuvent être influencées par divers facteurs, notamment leur milieu socio-économique, leur engagement,
+        et les ressources disponibles. Analyser ces facteurs peut fournir des insights précieux pour les éducateurs et les décideurs afin d’améliorer les résultats scolaires.
+
+        L’objectif principal est de prédire les résultats scolaires des étudiants en fonction de leurs caractéristiques, afin d’identifier les étudiants à risque et d’aider 
+        les éducateurs à intervenir de manière proactive.
+
+
+         **Présentation de l'application**
+             
+         Cette application
+        
+        - Présente les données nécessaires pour réaliser la prédiction de la performance des étudiants ; 
+        - Présente les tendances de toutes les variables à travers des graphiques univriés, bivariés ; 
+        - Permet de prédire à l'aide d'un modèle adapté la performance des étudiants ; 
+        - Fournit une description numérique de toutes les variables ; 
+
         **Auteurs :**
-        - Nom Auteur 1
-        - Nom Auteur 2
+        - **Famara SADIO**, *Elève Ingénieur Statisticien Economiste en 2ème année*
+        - **Saran NDIAYE**, *Elève Ingénieur Statisticien Economiste en 2ème année*
+        - **Amadou YOUM**,  *Elève Ingénieur Statisticien Economiste en 2ème année*  
+        - **Yague DIOP**,   *Elève Ingénieur Statisticien Economiste en 2ème année* 
+        
+        Ecole nationale de la Statistique et de l'Analyse Economique PIERRE NDIAYE
+        
+        **Superviseur** :
+        
+        **Mously DIAW**, *Data scientist*
         """)
     
     
@@ -105,6 +130,7 @@ def presentation_page(df):
 
 def visualization_page(df):
     st.title("Visualisation des Données")
+    st.markdown("Cette section présente les analyses sous forme de graphes de toutes les variables: univariées, bivariées, corrélation et nuage de points")
     st.subheader("Graphiques univariés")
     # Variable à selectionner
     variable = st.selectbox("Sélectionner une variable à visualiser", df.columns)
@@ -260,7 +286,7 @@ MODELS_WITH_PARAMS = {
 # Page de la modélisation
 def prediction_page(df):
     st.title("Modélisation")
-
+    st.markdown("Cette section permet de prédire à partir du modèle adéquat la performance des étudiants.")
     # Sélection des variables
     target = st.selectbox("Sélectionner la variable cible", df.select_dtypes(include=[np.number]).columns)
     features = st.multiselect("Sélectionnez les variables explicatives :", df.columns)
