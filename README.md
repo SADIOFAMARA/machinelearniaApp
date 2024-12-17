@@ -1,7 +1,7 @@
 **Prédiction de la performance des étudiants**
 
 <p align="center">
-<img src="classroom-2787754_1280.jpg" alt="Description de l'image" style="width: 400px; margin-top: 10px;">
+<img src="classroom-2787754_1280.jpg" alt="Description de l'image" style="width: 1000px; margin-top: 10px;">
 </p>
 
 **Contexte**
